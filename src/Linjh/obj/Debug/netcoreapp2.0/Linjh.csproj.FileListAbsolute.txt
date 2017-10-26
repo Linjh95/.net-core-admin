@@ -1,0 +1,11 @@
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\bin\Debug\netcoreapp2.0\Linjh.deps.json
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\bin\Debug\netcoreapp2.0\Linjh.runtimeconfig.json
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\bin\Debug\netcoreapp2.0\Linjh.runtimeconfig.dev.json
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\bin\Debug\netcoreapp2.0\Linjh.dll
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\bin\Debug\netcoreapp2.0\Linjh.pdb
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\obj\Debug\netcoreapp2.0\Linjh.csprojResolveAssemblyReference.cache
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\obj\Debug\netcoreapp2.0\Linjh.csproj.CoreCompileInputs.cache
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\obj\Debug\netcoreapp2.0\Linjh.AssemblyInfoInputs.cache
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\obj\Debug\netcoreapp2.0\Linjh.AssemblyInfo.cs
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\obj\Debug\netcoreapp2.0\Linjh.dll
+C:\Users\linjh\source\repos\coreprj\Linjh\Linjh\obj\Debug\netcoreapp2.0\Linjh.pdb
