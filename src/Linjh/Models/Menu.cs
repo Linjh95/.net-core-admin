@@ -1,53 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Linjh.Models
 {
-    /// <summary>
-    /// 功能菜单实体
-    /// </summary>
     public class Menu : Entity
     {
-        /// <summary>
-        /// 父级ID
-        /// </summary>
-        public Guid ParentId { get; set; }
-
-        /// <summary>
-        /// 序号
-        /// </summary>
-        public int SerialNumber { get; set; }
-
-        /// <summary>
-        /// 菜单名称
-        /// </summary>
+        //菜单关系
+        [DefaultValue(0)]
+        public int Pid { get; set; }
+        //菜单名称
+        [DefaultValue("")]
         public string Name { get; set; }
-
-        /// <summary>
-        /// 菜单编码
-        /// </summary>
-        public string Code { get; set; }
-
-        /// <summary>
-        /// 菜单地址
-        /// </summary>
-        public string Url { get; set; }
-
-        /// <summary>
-        /// 类型：0导航菜单；1操作按钮。
-        /// </summary>
-        public int Type { get; set; }
-
-        /// <summary>
-        /// 菜单图标
-        /// </summary>
+        //图标
+        [DefaultValue("")]
         public string Icon { get; set; }
-
-        /// <summary>
-        /// 菜单备注
-        /// </summary>
-        public string Remarks { get; set; }
+        //菜单对应的权限
+        [DefaultValue("")]
+        public string Slug { get; set; }
+        //菜单链接地址
+        [DefaultValue("")]
+        public string Url { get; set; }
+        //菜单高亮地址
+        [DefaultValue("")]
+        public string Active { get; set; }
+        //描述
+        [DefaultValue("")]
+        public string Description { get; set; }
+        //排序
+        [DefaultValue(0)]
+        public int Sort { get; set; }
     }
 }

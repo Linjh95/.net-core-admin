@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Linjh.Models
 {
-    public class Role : Entity
+    public class Permission : Entity
     {
         public string Name { get; set; }
 
@@ -14,8 +13,7 @@ namespace Linjh.Models
 
         public string Description { get; set; }
 
-        [DefaultValue(1)]
-        public int Level { get; set; }
+        public string Model { get; set; }
 
         public DateTime? CreateTime { get; set; }
     }
