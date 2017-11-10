@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Movie App</title>
+    <title>@ViewData["Title"]</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -33,6 +33,7 @@
                     <li><a asp-area="" asp-controller="Login" asp-action="Index">登录</a></li>
                     <li><a asp-area="" asp-controller="Register" asp-action="About">注册</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">联系我们</a></li>
+                    <li><a asp-area="Admin" asp-controller="Login" asp-action="Index">后台登录</a></li>
                 </ul>
             </div>
         </div>

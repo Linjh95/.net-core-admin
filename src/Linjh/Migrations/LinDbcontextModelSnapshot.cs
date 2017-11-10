@@ -22,7 +22,7 @@ namespace Linjh.Migrations
 
             modelBuilder.Entity("Linjh.Models.AdminUser", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime?>("CreateTime");
@@ -45,7 +45,7 @@ namespace Linjh.Migrations
 
             modelBuilder.Entity("Linjh.Models.Menu", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Active");
@@ -71,7 +71,7 @@ namespace Linjh.Migrations
 
             modelBuilder.Entity("Linjh.Models.Permission", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime?>("CreateTime");
@@ -91,7 +91,7 @@ namespace Linjh.Migrations
 
             modelBuilder.Entity("Linjh.Models.PermissionAdminUser", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("AdminUserId");
@@ -105,7 +105,7 @@ namespace Linjh.Migrations
 
             modelBuilder.Entity("Linjh.Models.PermissionRole", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("PermissionId");
@@ -119,7 +119,7 @@ namespace Linjh.Migrations
 
             modelBuilder.Entity("Linjh.Models.Role", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime?>("CreateTime");
@@ -139,7 +139,7 @@ namespace Linjh.Migrations
 
             modelBuilder.Entity("Linjh.Models.RoleAdminUser", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("AdminUserId");

@@ -4,91 +4,55 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Linjh.Repositories.Admin;
+using Linjh.Models;
+using Linjh.Utility;
 
 namespace Linjh.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class LoginController : Controller
     {
+        private AdminUserRepository adminUserRepository;
+
+        //构造函数注入仓储
+        public LoginController(AdminUserRepository _adminUserRepository)
+        {
+            adminUserRepository = _adminUserRepository;
+        }
         // GET: Login
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Login/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Login/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Login/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Index(LoginModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
+                //检查用户信息
+                var user = adminUserRepository.CheckUser(model.Name, model.Password);
+                if (user != null)
+                {
+                    //记录Session
+                    HttpContext.Session.SetString("CurrentUserId", user.Id.ToString());
+                    HttpContext.Session.Set("CurrentUser", ByteConvertHelper.Object2Bytes(user));
+                    //跳转到系统首页
+                    return RedirectToAction("Index", "AdminHome");
+                }
+                ViewBag.ErrorInfo = "用户名或密码错误。";
                 return View();
             }
-        }
-
-        // GET: Login/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Login/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
+            foreach (var item in ModelState.Values)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
+                if (item.Errors.Count > 0)
+                {
+                    ViewBag.ErrorInfo = item.Errors[0].ErrorMessage;
+                    break;
+                }
             }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Login/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Login/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
     }
 }
